@@ -1,0 +1,32 @@
+{
+  "name": "angularFire-seed",
+  "version": "0.0.0",
+  "description": "Seed project for AngularFire apps http://angularfire.com",
+  "main": "gulpfile.js",
+  "scripts": {
+    "prepublish": "bower install",
+    "start": "gulp",
+    "deploy": "gulp build && firebase deploy"
+  },
+  "keywords": [],
+  "author": "",
+  "devDependencies": {
+    "browserify": "3.19.x",
+    "gulp": "~3.3.2",
+    "gulp-browserify": "~0.2.5",
+    "gulp-uglify": "~0.1.0",
+    "gulp-ngmin": "~0.1.2",
+    "gulp-minify-css": "~0.2.0",
+    "gulp-livereload": "~0.2.0",
+    "gulp-concat": "~2.1.7",
+    "gulp-clean": "~0.2.2",
+    "tiny-lr": "~0.0.5",
+    "bower": "~1.2.8",
+    "firebase-tools": "~0.1.6",
+    "karma": "~0.10.9",
+    "karma-browserify": "0.0.6",
+    "gulp-karma": "0.0.2",
+    "karma-junit-reporter": "~0.2.1",
+    "express": "~3.4.8"
+  }
+}

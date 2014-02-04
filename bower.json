@@ -1,0 +1,20 @@
+{
+  "name": "angularFire-seed",
+  "version": "0.0.0",
+  "authors" : [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "firebase": "~1.0.2",
+    "firebase-simple-login": "~1.2.1",
+    "angular": "1.2.10",
+    "angular-route": "~1.2.10",
+    "angularfire": "~0.6.0"
+  }
+}
