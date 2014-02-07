@@ -24,9 +24,9 @@
     "bower": "~1.2.8",
     "firebase-tools": "~0.1.6",
     "karma": "~0.10.9",
-    "karma-browserify": "0.0.6",
     "gulp-karma": "0.0.2",
     "karma-junit-reporter": "~0.2.1",
-    "express": "~3.4.8"
+    "express": "~3.4.8",
+    "karma-ng-scenario": "~0.1.0"
   }
 }

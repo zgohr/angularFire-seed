@@ -7,12 +7,14 @@ var angular = require('angular'),
 
 require('./services/firebase');
 require('./modules/routeSecurity');
+require('./services/login');
 
 var module = angular.module('myApp', [
   'ngRoute',
   'firebase',
   'myApp.config',
-  'myApp.firebase',
+  'myApp.service.firebase',
+  'myApp.service.login',
   'waitForAuth',
   'routeSecurity'
 ]);
@@ -28,8 +30,6 @@ module.filter('reverse', require('./filters/reverse.js'));
 
 module.directive('appVersion', require('./directives/appversion'));
 
-module.service('profileCreator', require('./services/profilecreator'));
-module.service('loginService', require('./services/login'));
 
 module.run(function (loginService, $rootScope, FBURL) {
   if (FBURL === 'https://INSTANCE.firebaseio.com') {

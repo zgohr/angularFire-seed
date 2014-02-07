@@ -3,7 +3,30 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     browserify = require('gulp-browserify'),
     minifyCSS = require('gulp-minify-css'),
-    express = require('express');
+    express = require('express'),
+    karma = require('gulp-karma');
+
+gulp.task('e2e', function() {
+  return gulp.src([
+      'app/js/bundle.js',
+      'test/lib/angular/angular-mocks.js',
+      'test/e2e/scenarios.js'
+    ]).pipe(karma({
+      configFile: 'config/karma-e2e.conf.js',
+      action: 'run'
+    }));
+});
+
+gulp.task('karma', function() {
+  return gulp.src([
+    'app/js/bundle.js',
+    'test/lib/angular/angular-mocks.js',
+    'test/unit/servicesSpec.js'
+  ]).pipe(karma({
+      configFile: 'config/karma.conf.js',
+      action: 'run'
+    }));
+});
 
 gulp.task('server', function() {
   var app = express();
@@ -53,6 +76,14 @@ gulp.task('minify-css', function() {
 gulp.task('clean', function() {
   gulp.src('./app/js/bundle.js', {read: false})
       .pipe(clean());
+});
+
+gulp.task('unit-test', function() {
+  gulp.run('browserify', 'karma');
+});
+
+gulp.task('e2e-test', function() {
+  gulp.run('browserify', 'server', 'e2e');
 });
 
 gulp.task('default', function() {

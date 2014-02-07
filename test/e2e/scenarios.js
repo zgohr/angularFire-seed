@@ -16,7 +16,7 @@ angular.scenario.dsl('angularFireLogout', function() {
 describe('my app', function() {
 
   beforeEach(function() {
-     browser().navigateTo('../../app/index.html');
+     browser().navigateTo('/');
 //     this.addFutureAction('authenticate', function($window, $document, done) {
 //        $document.injector().get('waitForAuth').then(done);
 //     });
